@@ -49,6 +49,8 @@ collections:
   - name: "spec"
     label: "spec"
     folder: "src/content/spec"
-    summary: "{{body}}"
+    slug: "{{title | slugify}}"
+    create: true
     fields:
+      - { label: "标题", name: "title", widget: "string"}
       - { label: "Body", name: "body", widget: "markdown" }
