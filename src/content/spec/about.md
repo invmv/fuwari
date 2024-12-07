@@ -1,3 +1,6 @@
+---
+title: about
+---
 # About
 本站用 [Fuwari](https://github.com/saicaca/fuwari) 作为主题
 
