@@ -94,11 +94,13 @@ collections:
         widget: "markdown"
         modes: ["raw", "rich_text"]
 
-  - name: "spec" #禁止了创建页面，但是可以修改请手动上传页面文件到spec目录。
+  - name: "spec"
     label: "spec"
     folder: "src/content/spec"
-    summary: "{{body}}"
+    slug: "{{title | slugify}}"
+    create: true
     fields:
+      - { label: "路径", name: "title", widget: "string"} #即文件名也是路径，正文不显示
       - { label: "Body", name: "body", widget: "markdown" }
 ```
 
