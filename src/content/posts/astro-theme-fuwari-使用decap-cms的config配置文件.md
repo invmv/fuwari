@@ -41,10 +41,6 @@ static/admin  改名为pulic。即放在/pulic/admin下
 
 # config
 
-<details>
-
-<summary>config配置</summary>
-
 ```yaml
 backend:
   name: github
@@ -103,5 +99,3 @@ collections:
       - { label: "路径", name: "title", widget: "string"} #即文件名也是路径，正文不显示
       - { label: "Body", name: "body", widget: "markdown" }
 ```
-
-</details>
