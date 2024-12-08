@@ -36,7 +36,7 @@ const pageContent = await getEntry('spec', slug)
 const { Content } = await pageContent.render()
 ---
 
-<MainGridLayout title={pageContent.data.title}>
+<MainGridLayout title={slug}>
     <section class="flex w-full rounded-[var(--radius-large)] overflow-hidden relative min-h-32">
         <div class="card-base z-10 px-9 py-6 relative w-full">
             <Markdown class="mt-2">
