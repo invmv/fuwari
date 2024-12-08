@@ -1,0 +1,32 @@
+---
+
+import MainGridLayout from '../layouts/MainGridLayout.astro'
+
+import { getEntry, getCollection } from 'astro:content'
+
+
+import Markdown from '@components/misc/Markdown.astro'
+
+// 静态路径生成
+export const getStaticPaths = async () => {
+    const pages = await getCollection('spec')
+    return pages.map((page) => ({
+        params: { slug: page.slug },
+    }))
+}
+
+// 获取动态内容
+const { slug } = Astro.params
+const pageContent = await getEntry('spec', slug)
+const { Content } = await pageContent.render()
+---
+
+<MainGridLayout title={slug}>
+    <section class="flex w-full rounded-[var(--radius-large)] overflow-hidden relative min-h-32">
+        <div class="card-base z-10 px-9 py-6 relative w-full">
+            <Markdown class="mt-2">
+                <Content />
+            </Markdown>
+        </div>
+    </section>
+</MainGridLayout>

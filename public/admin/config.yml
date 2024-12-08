@@ -1,0 +1,56 @@
+backend:
+  name: github
+  repo: invmv/fuwari
+  branch: main # Branch to update (optional; defaults to master)
+  base_url: https://invmy.us.kg
+  auth_endpoint: /api/auth
+media_folder: public/uploads
+public_folder: /uploads
+collections:
+  - name: "Posts"
+    label: "Posts"
+    folder: "src/content/posts"
+    slug: "{{title | slugify}}"  # 自动生成的文件名格式
+    summary: "{{published}} {{title}}"
+    create: true
+    fields:
+      - { label: "封面", name: "image", widget: "image", required: false}
+      - { label: "日期", name: "published", widget: "datetime", format: "YYYY-MM-DD" }
+      - { label: "标题", name: "title", widget: "string"}
+      - { label: "描述", name: "description", widget: "text"}
+
+      - label: "草稿"
+        name: "draft"
+        widget: "boolean"
+        default: false
+
+      # 分类字段，用户可以从预定义分类中选择
+      - label: "分类"
+        name: "category"
+        widget: "select"
+        options:
+          - "review"
+          - "mytrade"
+          - "other"
+        default: "other"  # 设置默认值
+      
+      # 标签字段，用户可以自由添加多个标签
+      - label: "标签"
+        name: "tags"
+        widget: "list"
+        allow_add: true
+        hint: "标签使用英文逗号+空格隔开，如标签1, 标签2, 标签3"
+      
+      - name: "body"
+        label: "正文"
+        widget: "markdown"
+        modes: ["raw", "rich_text"]
+
+  - name: "spec"
+    label: "spec"
+    folder: "src/content/spec"
+    slug: "{{title | slugify}}"
+    create: true
+    fields:
+      - { label: "路径", name: "title", widget: "string"}
+      - { label: "Body", name: "body", widget: "markdown" }
