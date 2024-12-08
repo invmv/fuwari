@@ -53,7 +53,13 @@ const { Content } = await pageContent.render()
 
 比如我想创建路径为 new 的页面，则 ```src\content\spec\new.md```
 
-new.md内容 正常填写md内容即可，不需要前置文章头，如果你想插入html代码，直接插入即可。实时渲染这与hugo不同
+new.md内容 正常填写md内容即可，
+```
+# 我是大标题
+新页面测试
+
+```
+不需要前置文章头，如果你想插入html代码，直接插入即可。实时渲染这与hugo不同
 
 我则整合了decap cms，用title当slug。后台就可以正常创建和编辑pages了
 
