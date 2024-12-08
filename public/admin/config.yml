@@ -52,5 +52,5 @@ collections:
     slug: "{{title | slugify}}"
     create: true
     fields:
-      - { label: "标题", name: "title", widget: "string"}
+      - { label: "路径", name: "title", widget: "string"}
       - { label: "Body", name: "body", widget: "markdown" }

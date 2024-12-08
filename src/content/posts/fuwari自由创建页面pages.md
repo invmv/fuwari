@@ -9,7 +9,7 @@ tags:
 ---
 # 创建路由
 
-创建文件：src\pages\[...slug].astro
+创建文件：```src\pages\[...slug].astro```
 
 代码
 ```
