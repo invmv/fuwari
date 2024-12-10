@@ -32,6 +32,7 @@ collections:
           - "Trading"
           - "PriceAction"
           - "Think"
+          - "ReView"
           - "other"
         default: "other"  # 设置默认值
       
