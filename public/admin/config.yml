@@ -29,8 +29,9 @@ collections:
         name: "category"
         widget: "select"
         options:
-          - "review"
-          - "mytrade"
+          - "Trading"
+          - "PriceAction"
+          - "Think"
           - "other"
         default: "other"  # 设置默认值
       
