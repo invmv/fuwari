@@ -43,7 +43,7 @@ export const navBarConfig: NavBarConfig = {
     LinkPreset.Archive,
     //LinkPreset.About,
     {
-      name: '10$挑战P/L',
+      name: 'P/L',
       url: '/pl',     // Internal links should not include the base path, as it is automatically added
       external: false,                               // Show an external link icon and will open in a new tab
     },{
@@ -51,11 +51,11 @@ export const navBarConfig: NavBarConfig = {
       url: '/ec',     // Internal links should not include the base path, as it is automatically added
       external: false,                               // Show an external link icon and will open in a new tab
     },{
-      name: 'PA百科-施工中',
+      name: 'PA百科',
       url: 'https://docs.invmy.us.kg/',     // Internal links should not include the base path, as it is automatically added
       external: true,                               // Show an external link icon and will open in a new tab
     },{
-      name: 'PA视频课-网络资源',
+      name: 'PA视频课',
       url: 'https://pa.invmy.us.kg/',     // Internal links should not include the base path, as it is automatically added
       external: true,                               // Show an external link icon and will open in a new tab
     },{
