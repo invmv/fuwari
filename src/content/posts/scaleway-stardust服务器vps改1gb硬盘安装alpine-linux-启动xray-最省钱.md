@@ -203,6 +203,18 @@ Restart
 # rc-service xray restart
 ```
 
+## 启动xray
+
+将config.json放入/root/xray的文件夹内使用
+
+```
+#启动
+rc-service xray start
+
+# 可以查看运行状态
+rc-status
+```
+
 ## 系统服务命令
 
 ```
@@ -219,26 +231,14 @@ rc-service --list
 rc-status
 ```
 
-## 启动xray
-
-将config.json放入/root/xray的文件夹内使用
-
-```
-#启动
-rc-service xray start
-
-# 可以查看运行状态
-rc-status
-```
 
 ## 替换并自动更新 geo
 
 创建更新脚本：
 
 ```\#
-mkdir /usr/local/etc/xray-script
 # 打开并编辑更新脚本
-vim /usr/local/etc/xray-script/update-dat.sh
+vim /root/xray/update-dat.sh
 ```
 
 脚本内容：
@@ -248,7 +248,7 @@ vim /usr/local/etc/xray-script/update-dat.sh
 
 set -e
 
-XRAY_DIR="/usr/local/share/xray"
+XRAY_DIR="/root/xray"
 
 GEOIP_URL="https://github.com/Loyalsoldier/v2ray-rules-dat/raw/release/geoip.dat"
 GEOSITE_URL="https://github.com/Loyalsoldier/v2ray-rules-dat/raw/release/geosite.dat"
@@ -269,15 +269,15 @@ rc-service xray restart
 
 赋予可执行权限：
 
-chmod +x /usr/local/etc/xray-script/update-dat.sh
+chmod +x /root/xray/update-dat.sh
 可以输入以下命令先手动执行一次：
 
-/usr/local/etc/xray-script/update-dat.sh
+/root/xray/update-dat.sh
 确认没有问题后使用 crontab 设置定期执行：
 
 执行 crontab -e；
 选择使用 vim 打开；
-在文件末尾追加 00 23 \* \* 1 /usr/local/etc/xray-script/update-dat.sh >/dev/null 2>&1
+在文件末尾追加 00 23 \* \* 1 /root/xray/update-dat.sh >/dev/null 2>&1
 说明：可自行决定更新时间，示例中为每周一 23 点执行（注意服务器时区）。
 
 # Warp 实现ipv4出口
