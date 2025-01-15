@@ -92,6 +92,8 @@ xray项目：https://github.com/XTLS/Xray-core
 
 其他参考
 
+config大全 https://github.com/lxhao61/integrated-examples
+
 一键脚本 https://github.com/zxcvos/Xray-script
 
 x-ui https://github.com/MHSanaei/3x-ui
