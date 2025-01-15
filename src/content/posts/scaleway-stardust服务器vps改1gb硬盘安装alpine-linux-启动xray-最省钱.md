@@ -31,7 +31,7 @@ scw instance server stop <实例的InstanceID>
 2. 关机
 3. 点击实例的Attached volumes添加LOCAL STORAGE 1GB
 4. 点击实例的Create flexible IP添加一个ipv4地址（可能不是必须，netboot支持ipv6了）
-5. 开机，按照教程启动 https://gist.github.com/karolba/a3f1c5f8d50c67f5a19e6c8f38e53e12
+5. 先链接console再开机，需要按esc进行中断进入bios。按照教程启动 https://gist.github.com/karolba/a3f1c5f8d50c67f5a19e6c8f38e53e12
 6. netboot.xyz 网络安装 Alpine Linux
 7. 执行 setup-alpine 完成后续设置，网络设置为 DHCP，磁盘选 vdb，类型为 sys，设置密码等
 8. 控制台advanced-settings设置boot启动盘
